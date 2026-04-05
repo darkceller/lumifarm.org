@@ -4,16 +4,20 @@
     <title>參與行動 on 光農合作社群 Lumiuous Farmer&#39;s Network</title>
     <link>http://localhost:1313/events/</link>
     <description>Recent content in 參與行動 on 光農合作社群 Lumiuous Farmer&#39;s Network</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 18 Apr 2026 09:30:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/events/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2026 </copyright>
+    <lastBuildDate>Sat, 18 Apr 2026 09:30:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/events/index.xml" rel="self" type="application/rss+xml" />
+    
     <item>
       <title>樸爪農園志工日</title>
       <link>http://localhost:1313/events/2026-04-18-%E6%A8%B8%E7%88%AA%E8%BE%B2%E5%9C%92%E5%BF%97%E5%B7%A5%E6%97%A5/</link>
       <pubDate>Sat, 18 Apr 2026 09:30:00 +0800</pubDate>
+      
       <guid>http://localhost:1313/events/2026-04-18-%E6%A8%B8%E7%88%AA%E8%BE%B2%E5%9C%92%E5%BF%97%E5%B7%A5%E6%97%A5/</guid>
       <description>這是一個好活動</description>
+      
     </item>
+    
   </channel>
 </rss>

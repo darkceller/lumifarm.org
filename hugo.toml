@@ -15,38 +15,44 @@ theme = 'blowfish'
     showRecent = false
     layout = "background"
     homepageImage = "images/food-forest-bg.png"
-    # 這裡可以嘗試增加一個半透明的遮罩，讓背景變暗，文字更顯眼
+    # 背景遮罩：讓背景變暗，文字更顯眼
     imageFilter = "brightness(0.4) contrast(1.1)"
 
   [params.article]
     showDate = true
-   showReadingTime = true
+    showReadingTime = true
     showAuthor = false
     # 開啟卡片模式
     layout = "card"
-# ==========================================
-# 頂部導覽列選單設定 (weight 代表排序，數字越小越前面)
-# ==========================================
 
+# ==========================================
+# 頂部導覽列選單設定
+# ==========================================
 [menu]
   [[menu.main]]
     name = "關於我們"
     pageRef = "/about"
     weight = 10
+
   [[menu.main]]
     name = "光農共生圈"
     pageRef = "/community"
     weight = 15
+
   [[menu.main]]
     name = "永續農耕知識庫"
     pageRef = "/posts"
     weight = 20
+
   [[menu.main]]
     name = "支持我們"
     pageRef = "/support"
     weight = 40
 
-    [markup]
+# ==========================================
+# 核心功能設定 (必須獨立出來，不能縮進到選單內)
+# ==========================================
+[markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
