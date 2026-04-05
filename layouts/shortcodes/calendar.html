@@ -1,0 +1,117 @@
+<style>
+    .cal-wrapper { display: flex; flex-direction: column; gap: 3rem; width: 100%; margin: 0 auto; padding: 2rem 0; }
+    @media (min-width: 992px) { .cal-wrapper { flex-direction: row; } .cal-left { width: 40%; } .cal-right { width: 60%; } }
+    
+    .cal-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+    .cal-title { font-size: 1.5rem; font-weight: bold; margin: 0; }
+    .cal-btn { background: rgba(255,255,255,0.1); border: none; width: 40px; height: 40px; border-radius: 50%; color: inherit; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+    .cal-btn:hover { background: rgba(255,255,255,0.2); }
+    
+    .cal-grid-7 { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; gap: 10px; margin-bottom: 1rem; }
+    .cal-weekday { font-weight: bold; opacity: 0.6; margin-bottom: 10px; }
+    
+    .day-muted { opacity: 0.2; }
+    .day-normal { cursor: pointer; padding: 5px 0; transition: 0.2s; }
+    .day-normal:hover { color: #16a34a; font-weight: bold; }
+    .day-active { background: #16a34a; color: white; width: 36px; height: 36px; line-height: 36px; border-radius: 50%; margin: 0 auto; font-weight: bold; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(22, 163, 74, 0.4); }
+    .day-active:hover { background: #15803d; transform: scale(1.1); }
+    
+    .event-card { display: flex; gap: 1rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: inherit; transition: 0.2s; }
+    .event-card:hover { opacity: 0.7; transform: translateX(5px); }
+    .event-icon { width: 45px; height: 45px; background: #16a34a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+</style>
+
+<div class="cal-wrapper">
+    <div class="cal-left">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; opacity: 0.8; font-size: 0.9rem;">
+            <span style="width: 12px; height: 12px; background: #16a34a; border-radius: 50%; display: inline-block;"></span> 
+            表示當日有課程/活動
+        </div>
+        <div id="event-list"></div>
+    </div>
+    <div class="cal-right cal-box">
+        <div class="cal-header">
+            <h2 id="monthYear" class="cal-title"></h2>
+            <div style="display: flex; gap: 10px;">
+                <button id="prevBtn" class="cal-btn">&lt;</button>
+                <button id="nextBtn" class="cal-btn">&gt;</button>
+            </div>
+        </div>
+        <div class="cal-grid-7 cal-weekday">
+            <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+        </div>
+        <div id="calendarDays" class="cal-grid-7"></div>
+    </div>
+</div>
+
+<script>
+const events = [
+    {{ range where site.RegularPages "Section" "events" }}
+    {
+        title: "{{ .Title }}",
+        date: "{{ .Date.Format "2006-01-02" }}",
+        displayDate: "{{ .Date.Format "2006.01.02" }}",
+        link: "{{ if .Params.link }}{{ .Params.link }}{{ else }}{{ .Permalink }}{{ end }}"
+    },
+    {{ end }}
+];
+
+const monthYear = document.getElementById('monthYear');
+const calendarDays = document.getElementById('calendarDays');
+const eventList = document.getElementById('event-list');
+let date = new Date();
+
+function renderCalendar() {
+    date.setDate(1);
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    const firstDayIndex = date.getDay();
+    const lastDay = new Date(year, month + 1, 0).getDate();
+    const prevLastDay = new Date(year, month, 0).getDate();
+    const nextDays = 7 - new Date(year, month + 1, 0).getDay() - 1;
+
+    monthYear.innerHTML = `${year}年 ${month + 1}月`;
+    let days = "";
+
+    for (let x = firstDayIndex; x > 0; x--) { days += `<div class="day-muted">${prevLastDay - x + 1}</div>`; }
+    for (let i = 1; i <= lastDay; i++) {
+        let currentDayStr = `${year}-${String(month+1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+        let hasEvent = events.some(e => e.date === currentDayStr);
+        if (hasEvent) { days += `<div><div class="day-active" onclick="renderEvents('${currentDayStr}')">${i}</div></div>`; } 
+        else { days += `<div><div class="day-normal" onclick="renderEvents('${currentDayStr}')">${i}</div></div>`; }
+    }
+    for (let j = 1; j <= nextDays; j++) { days += `<div class="day-muted">${j}</div>`; }
+    calendarDays.innerHTML = days;
+    renderEvents(null); 
+}
+
+function renderEvents(filterDate) {
+    let html = '';
+    let filteredEvents = events;
+    if (filterDate) { filteredEvents = events.filter(e => e.date === filterDate); } 
+    else {
+        const monthStr = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2, '0')}`;
+        filteredEvents = events.filter(e => e.date.startsWith(monthStr));
+    }
+
+    if (filteredEvents.length === 0) { html = '<p style="opacity: 0.5; padding: 1rem 0;">這一天（或這個月）目前沒有安排活動喔！</p>'; } 
+    else {
+        filteredEvents.forEach(e => {
+            html += `
+            <a href="${e.link}" target="_blank" class="event-card">
+                <div class="event-icon"><svg style="width:24px; height:24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+                <div>
+                    <div style="font-size:0.85rem; opacity:0.6; margin-bottom:4px;">${e.displayDate}</div>
+                    <h3 style="font-size:1.2rem; font-weight:bold; margin:0;">${e.title}</h3>
+                </div>
+            </a>`;
+        });
+    }
+    eventList.innerHTML = html;
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => { date.setMonth(date.getMonth() - 1); renderCalendar(); });
+document.getElementById('nextBtn').addEventListener('click', () => { date.setMonth(date.getMonth() + 1); renderCalendar(); });
+renderCalendar();
+</script>
