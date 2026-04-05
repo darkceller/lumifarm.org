@@ -27,6 +27,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "活動名稱", name: "title", widget: "string"}
-      - {label: "活動日期", name: "date", widget: "date"}
+      - {label: "活動日期", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
       - {label: "報名連結", name: "link", widget: "string", required: false}
       - {label: "活動詳情", name: "body", widget: "markdown", required: false}
