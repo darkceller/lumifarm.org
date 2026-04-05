@@ -52,7 +52,7 @@ const events = [
         title: "{{ .Title }}",
         date: "{{ .Date.Format "2006-01-02" }}",
         displayDate: "{{ .Date.Format "2006.01.02" }}",
-        link: "{{ if .Params.link }}{{ .Params.link }}{{ else }}{{ .Permalink }}{{ end }}"
+        link: "{{ if .RelPermalink }}{{ .RelPermalink }}{{ else }}{{ .Permalink }}{{ end }}"
     },
     {{ end }}
 ];
