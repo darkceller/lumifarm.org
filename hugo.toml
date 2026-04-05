@@ -44,3 +44,8 @@ theme = 'blowfish'
     name = "支持我們"
     pageRef = "/support"
     weight = 40
+
+    [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
