@@ -5,6 +5,31 @@ cascade:
   showDate: false
   showAuthor: false
 ---
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; margin-bottom: 4rem;">
+  
+  <div style="flex: 1; min-width: 300px;">
+    <img src="/images/volunteer-recruitment.png" alt="光農共餐志工" style="border-radius: 15px; width: 100%; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+  </div>
+
+  <div style="flex: 1.5; min-width: 300px;">
+    <h2 style="margin-top: 0; color: #4ade80; font-size: 1.8rem;">🌿 2026 每月共學共餐志工招募｜在泥土中找回生活的節奏</h2>
+    <p style="line-height: 1.8; opacity: 0.9;">
+      想要感受雙手沾滿泥土的療癒感嗎？光農合作社群即將舉辦每月一次的「農務共食日」！我們邀請你一起走入田間，從整地中學習與自然共處。除了能夠在舒適的環境下進行勞動，並加入田邊的野餐派對。農場將準備特製點心，也邀請你帶一道菜與大家分享（一人一菜），讓我們在汗水後共享美味。
+    </p>
+ <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+      <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;">
+        <span style="color: #4ade80;">■</span> <strong>時間：</strong> 每月一天週末
+      </li>
+      <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;">
+        <span style="color: #4ade80;">■</span> <strong>地點：</strong> 樸爪農園
+      </li>
+      <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;">
+        <span style="color: #4ade80;">■</span> <strong>活動：</strong> 友善農耕體驗 + Potluck 共食派對
+      </li>
+    </ul>
+  </div>
+</div>
+
 
 <div style="font-size: 1.25rem; line-height: 1.8; margin-bottom: 2rem; color: #cbd5e1;">
   我們致力於推廣永續農耕、共生農業。透過知識的開放與社群的力量，讓每一片土地都能重獲生機。加入我們的行列，一起實踐友善土地的農業革命。
@@ -22,7 +47,7 @@ cascade:
 ---
 
 ## 📅 最新動態與參與行動
-<p style="text-align: center; color: #94a3b8;">(月曆模組載入中...)</p>
+{{< calendar >}}
 
 ---
 
