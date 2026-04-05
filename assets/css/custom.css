@@ -9,3 +9,17 @@
 .home-recent-posts h2, .home-recent-posts a {
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 }
+    /* 將背景圖套用到全站，並加上半透明的深色遮罩讓文字保持清晰 */
+body {
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                url('/images/forest-bg.png') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+/* 確保 Blowfish 原本的預設背景色變透明，才不會把我們的圖片擋住 */
+.bg-neutral {
+    background-color: transparent !important;
+}
+.dark\:bg-neutral-800 {
+    background-color: transparent !important;
+}
