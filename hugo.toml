@@ -38,10 +38,6 @@ theme = 'blowfish'
     pageRef = "/posts"
     weight = 20
   [[menu.main]]
-    name = "參與行動"
-    url = "/#最新動態與參與行動"
-    weight = 30
-  [[menu.main]]
     name = "支持我們"
     pageRef = "/support"
     weight = 40
