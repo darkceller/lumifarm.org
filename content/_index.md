@@ -11,23 +11,19 @@ cascade:
     <img src="/images/volunteer-recruitment.png" alt="光農共餐志工" style="border-radius: 15px; width: 100%; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
   </div>
 
-  <div style="flex: 1.5; min-width: 300px;">
-    <h2 style="margin-top: 0; color: #4ade80; font-size: 1.8rem;">🌿 2026 每月共學共餐志工招募｜在泥土中找回生活的節奏</h2>
-    <p style="line-height: 1.8; opacity: 0.9;">
-      想要感受雙手沾滿泥土的療癒感嗎？光農合作社群即將舉辦每月一次的「農務共食日」！我們邀請你一起走入田間，從整地中學習與自然共處。除了能夠在舒適的環境下進行勞動，並加入田邊的野餐派對。農場將準備特製點心，也邀請你帶一道菜與大家分享（一人一菜），讓我們在汗水後共享美味。
-    </p>
- <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
-      <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;">
-        <span style="color: #4ade80;">■</span> <strong>時間：</strong> 每月一天週末
-      </li>
-      <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;">
-        <span style="color: #4ade80;">■</span> <strong>地點：</strong> 樸爪農園
-      </li>
-      <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 10px;">
-        <span style="color: #4ade80;">■</span> <strong>活動：</strong> 友善農耕體驗 + Potluck 共食派對
-      </li>
-    </ul>
-  </div>
+<div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 1.5rem; margin: 0 auto 4rem auto; box-sizing: border-box; width: 100%;">
+<div style="flex: 1 1 280px; max-width: 100%;">
+<img src="/images/volunteer-recruitment.png" alt="光農共餐志工" style="border-radius: 15px; width: 100%; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: block; margin: 0 auto;">
+</div>
+<div style="flex: 1.5 1 280px; max-width: 100%; box-sizing: border-box;">
+<h2 style="margin-top: 0; color: #4ade80; font-size: 1.6rem;">🌿 2026 每月共學共餐志工招募｜在泥土中找回生活的節奏</h2>
+<p style="line-height: 1.8; opacity: 0.9;">想要感受雙手沾滿泥土的療癒感嗎？光農合作社群即將舉辦每月一次的「農務共食日」！我們邀請你一起走入田間，從整地中學習與自然共處。除了能夠在舒適的環境下進行勞動，並加入田邊的野餐派對。農場將準備特製點心，也邀請你帶一道菜與大家分享（一人一菜），讓我們在汗水後共享美味。</p>
+<ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+<li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #4ade80; margin-top: 4px;">■</span> <span><strong>時間：</strong> 每月一天週末</span></li>
+<li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #4ade80; margin-top: 4px;">■</span> <span><strong>地點：</strong> 樸爪農園</span></li>
+<li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #4ade80; margin-top: 4px;">■</span> <span><strong>活動：</strong> 友善農耕體驗 + Potluck 共食派對</span></li>
+</ul>
+</div>
 </div>
 
 
