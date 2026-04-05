@@ -26,13 +26,13 @@ title: "支持光農：讓永續在土地紮根"
       <h3 style="color: #4ade80; margin-top: 0; font-size: 1.5rem;">🏦 銀行轉帳</h3>
       <p style="font-size: 0.95rem; opacity: 0.8; margin-bottom: 1.5rem;">免手續費，適合大額支持或定期資助</p>
       <div style="text-align: left; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 16px; font-family: 'Courier New', Courier, monospace; line-height: 1.8; border: 1px dashed rgba(255,255,255,0.2);">
-        <span style="color: #4ade80;">銀行：</span><strong>[填入銀行名稱]</strong><br>
-        <span style="color: #4ade80;">代碼：</span><strong>[填入三位代碼]</strong><br>
-        <span style="color: #4ade80;">帳號：</span><strong>[填入完整帳號]</strong><br>
-        <span style="color: #4ade80;">戶名：</span><strong>[填入您的戶名]</strong>
+        <span style="color: #4ade80;">銀行：</span><strong>[永豐銀行]</strong><br>
+        <span style="color: #4ade80;">代碼：</span><strong>[807]</strong><br>
+        <span style="color: #4ade80;">帳號：</span><strong>[20301800119518]</strong><br>
+        <span style="color: #4ade80;">戶名：</span><strong>[林奕衡]</strong>
       </div>
     </div>
-    <p style="font-size: 0.85rem; margin-top: 1.5rem; opacity: 0.7;">轉帳後請來信告知帳號末五碼，以便我們寄送感謝信。</p>
+    <p style="font-size: 0.85rem; margin-top: 1.5rem; opacity: 0.7;">轉帳後請來信(info@lumifarm.org)告知帳號末五碼，以便我們寄送感謝信。</p>
   </div>
 
 </div>
