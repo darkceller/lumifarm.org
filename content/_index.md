@@ -8,13 +8,17 @@ cascade:
   showAuthor: false
 ---
 
-{{< lead >}}
+<lead>
 我們致力於推廣永續農耕、共生農業。透過知識的開放與社群的力量，讓每一片土地都能重獲生機。加入我們的行列，一起實踐友善土地的農業革命。
-{{< /lead >}}
+</lead>
 
 <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 3rem;">
-  {{< button href="/about" >}}了解光農計畫{{< /button >}}
-  {{< button href="/posts" target="_blank" >}}瀏覽知識庫{{< /button >}}
+  <a href="/about" style="background-color: #2563eb; color: white; padding: 12px 24px; border-radius: 99px; text-decoration: none; font-weight: bold; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+    了解光農計畫
+  </a>
+  <a href="/posts" target="_blank" style="background-color: #059669; color: white; padding: 12px 24px; border-radius: 99px; text-decoration: none; font-weight: bold; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+    瀏覽知識庫
+  </a>
 </div>
 
 ---

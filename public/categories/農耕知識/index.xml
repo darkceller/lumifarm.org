@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>農耕知識 on 光農合作社群 LumiFarm</title>
+    <title>農耕知識 on 光農合作社群 Lumiuous Farmer&#39;s Network</title>
     <link>http://localhost:1313/categories/%E8%BE%B2%E8%80%95%E7%9F%A5%E8%AD%98/</link>
-    <description>Recent content in 農耕知識 on 光農合作社群 LumiFarm</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in 農耕知識 on 光農合作社群 Lumiuous Farmer&#39;s Network</description>
+    <generator>Hugo</generator>
     <language>zh-tw</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E8%BE%B2%E8%80%95%E7%9F%A5%E8%AD%98/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Sat, 28 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E8%BE%B2%E8%80%95%E7%9F%A5%E8%AD%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>什麼是趨合農業？從食物森林看見生態的無限可能</title>
       <link>http://localhost:1313/posts/first-test/</link>
       <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
-      
       <guid>http://localhost:1313/posts/first-test/</guid>
       <description>趨合農業（Syntropic Farming）不只是種田，更是一場關於生命能量的循環。透過高度密集的植物配對與修剪，我們可以在退化的土地上重新找回豐饒的森林生態。</description>
-      
     </item>
-    
   </channel>
 </rss>
