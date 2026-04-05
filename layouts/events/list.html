@@ -52,9 +52,9 @@
 </div>
 
 <script>
-// 1. 抓取後台活動
+// 1. 抓取後台活動 (使用最高權限的抓法，無視任何層級限制)
 const events = [
-    {{ range .Pages }}
+    {{ range where .Site.RegularPages "Section" "events" }}
     {
         title: "{{ .Title }}",
         date: "{{ .Date.Format "2006-01-02" }}",
