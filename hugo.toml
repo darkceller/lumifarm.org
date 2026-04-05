@@ -34,6 +34,10 @@ theme = 'blowfish'
     pageRef = "/about"
     weight = 10
   [[menu.main]]
+    name = "光農共生圈"
+    pageRef = "/community"
+    weight = 15
+  [[menu.main]]
     name = "永續農耕知識庫"
     pageRef = "/posts"
     weight = 20
