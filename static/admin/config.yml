@@ -29,3 +29,16 @@ collections:
         fields:
           - {label: "標題", name: "title", widget: "string", default: "關於我們"}
           - {label: "內文", name: "body", widget: "markdown"}
+
+  # 3. 參與行動 (活動行事曆) <--- 這是這次新增的！
+  - name: "events"
+    label: "參與行動 (活動)"
+    folder: "content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "活動名稱", name: "title", widget: "string"}
+      - {label: "活動日期", name: "date", widget: "datetime"}
+      - {label: "報名連結 (Accupass等)", name: "link", widget: "string", required: false}
+      - {label: "活動簡介", name: "summary", widget: "text", required: false}
+      - {label: "詳細內容", name: "body", widget: "markdown", required: false}
