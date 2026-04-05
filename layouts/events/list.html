@@ -1,0 +1,131 @@
+{{ define "main" }}
+<div class="px-4 py-12 max-w-6xl mx-auto">
+    <h1 class="text-3xl md:text-4xl font-extrabold mb-12 text-gray-900 dark:text-white">最新動態</h1>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div class="lg:col-span-2">
+            <div class="flex items-center gap-4 mb-6 border-b pb-2 dark:border-gray-700">
+                <h2 class="text-xl font-bold">活動總覽</h2>
+                <div class="flex items-center text-sm text-gray-500">
+                    <span class="w-3 h-3 bg-green-600 rounded-full mr-2"></span> 有課程/活動
+                </div>
+            </div>
+            <div id="event-list" class="flex flex-col gap-6">
+                </div>
+        </div>
+
+        <div class="lg:col-span-3 bg-gray-50 dark:bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm">
+            <div class="flex justify-between items-center mb-8">
+                <h2 id="monthYear" class="text-2xl font-bold text-gray-800 dark:text-gray-100 tracking-wider"></h2>
+                <div class="flex space-x-3">
+                    <button id="prevBtn" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-700 rounded-full shadow hover:bg-gray-100 transition text-lg">&lt;</button>
+                    <button id="nextBtn" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-700 rounded-full shadow hover:bg-gray-100 transition text-lg">&gt;</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-7 gap-2 text-center text-gray-500 dark:text-gray-400 font-medium mb-4">
+                <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+            </div>
+            <div id="calendarDays" class="grid grid-cols-7 gap-y-4 gap-x-2 text-center items-center">
+                </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// 1. 把您在後台建立的活動抓出來
+const events = [
+    {{ range .Pages }}
+    {
+        title: "{{ .Title }}",
+        date: "{{ .Date.Format "2006-01-02" }}",
+        displayDate: "{{ .Date.Format "2006.01.02" }}",
+        link: "{{ if .Params.link }}{{ .Params.link }}{{ else }}{{ .Permalink }}{{ end }}"
+    },
+    {{ end }}
+];
+
+// 2. 負責畫月曆的程式碼
+const monthYear = document.getElementById('monthYear');
+const calendarDays = document.getElementById('calendarDays');
+const eventList = document.getElementById('event-list');
+let date = new Date();
+
+function renderCalendar() {
+    date.setDate(1);
+    const month = date.getMonth();
+    const year = date.getFullYear();
+    const firstDayIndex = date.getDay();
+    const lastDay = new Date(year, month + 1, 0).getDate();
+    const prevLastDay = new Date(year, month, 0).getDate();
+    const nextDays = 7 - new Date(year, month + 1, 0).getDay() - 1;
+
+    monthYear.innerHTML = `${year}年 ${month + 1}月`;
+    let days = "";
+
+    // 上個月的尾巴
+    for (let x = firstDayIndex; x > 0; x--) {
+        days += `<div class="text-gray-300 dark:text-gray-600">${prevLastDay - x + 1}</div>`;
+    }
+
+    // 這個月的日子
+    for (let i = 1; i <= lastDay; i++) {
+        let currentDayStr = `${year}-${String(month+1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+        let hasEvent = events.some(e => e.date === currentDayStr);
+        
+        if (hasEvent) {
+            // 有活動的日子變成深綠色圓圈
+            days += `<div><span class="flex items-center justify-center w-8 h-8 mx-auto bg-green-600 text-white rounded-full font-bold cursor-pointer hover:bg-green-700 shadow-md transition transform hover:scale-110" onclick="renderEvents('${currentDayStr}')">${i}</span></div>`;
+        } else {
+            // 平凡的日子
+            days += `<div class="cursor-pointer hover:font-bold hover:text-green-600 transition" onclick="renderEvents('${currentDayStr}')">${i}</div>`;
+        }
+    }
+
+    // 下個月的開頭
+    for (let j = 1; j <= nextDays; j++) {
+        days += `<div class="text-gray-300 dark:text-gray-600">${j}</div>`;
+    }
+    calendarDays.innerHTML = days;
+    renderEvents(null); // 預設顯示當月所有活動
+}
+
+function renderEvents(filterDate) {
+    let html = '';
+    let filteredEvents = events;
+    
+    if (filterDate) {
+        filteredEvents = events.filter(e => e.date === filterDate);
+    } else {
+        const monthStr = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2, '0')}`;
+        filteredEvents = events.filter(e => e.date.startsWith(monthStr));
+    }
+
+    if (filteredEvents.length === 0) {
+        html = '<p class="text-gray-400 py-4">這一天（或這個月）目前沒有安排活動喔！</p>';
+    } else {
+        // 畫出左邊的活動清單，附帶迴紋針小圖示
+        filteredEvents.forEach(e => {
+            html += `
+            <a href="${e.link}" target="_blank" class="block border-b border-gray-200 dark:border-gray-700 pb-5 hover:opacity-80 transition group">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-green-700 transition shadow">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">${e.displayDate}</div>
+                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 transition">${e.title}</h3>
+                    </div>
+                    <div class="text-gray-400 font-bold text-xl group-hover:text-green-600 transition">↗</div>
+                </div>
+            </a>`;
+        });
+    }
+    eventList.innerHTML = html;
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => { date.setMonth(date.getMonth() - 1); renderCalendar(); });
+document.getElementById('nextBtn').addEventListener('click', () => { date.setMonth(date.getMonth() + 1); renderCalendar(); });
+
+renderCalendar(); // 啟動月曆！
+</script>
+{{ end }}
