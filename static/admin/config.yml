@@ -19,7 +19,7 @@ collections:
       - {label: "摘要", name: "summary", widget: "text", required: false}
       - {label: "內文", name: "body", widget: "markdown"}
 
-  # 2. 靜態頁面 (包含關於我們、支持我們)
+  # 2. 靜態頁面 (包含關於我們、支持我們、光農共生圈)
   - name: "pages"
     label: "靜態頁面"
     files:
@@ -30,12 +30,19 @@ collections:
           - {label: "標題", name: "title", widget: "string", default: "關於我們"}
           - {label: "內文", name: "body", widget: "markdown"}
       
-      - file: "content/support.md" # <--- 新增支持我們
+      - file: "content/support.md"
         label: "支持我們"
         name: "support"
         fields:
           - {label: "標題", name: "title", widget: "string", default: "支持光農：讓永續在土地紮根"}
           - {label: "內文", name: "body", widget: "markdown"}
+
+      - file: "content/community.md" # <--- 這裡新增了共生圈頁面
+        label: "光農共生圈"
+        name: "community"
+        fields:
+          - {label: "標題", name: "title", widget: "string", default: "光農共生圈：勞動登記"}
+          - {label: "內文說明", name: "body", widget: "markdown"}
 
   # 3. 參與行動 (活動行事曆)
   - name: "events"
