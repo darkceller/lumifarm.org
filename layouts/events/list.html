@@ -1,38 +1,58 @@
 {{ define "main" }}
-<div class="px-4 py-12 max-w-6xl mx-auto">
-    <h1 class="text-3xl md:text-4xl font-extrabold mb-12 text-gray-900 dark:text-white">最新動態</h1>
+<style>
+    /* 專屬排版防護罩，避免被系統誤刪 */
+    .cal-wrapper { display: flex; flex-direction: column; gap: 3rem; max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem; }
+    @media (min-width: 992px) { .cal-wrapper { flex-direction: row; } .cal-left { width: 35%; } .cal-right { width: 65%; } }
     
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
-        <div class="lg:col-span-2">
-            <div class="flex items-center gap-4 mb-6 border-b pb-2 dark:border-gray-700">
-                <h2 class="text-xl font-bold">活動總覽</h2>
-                <div class="flex items-center text-sm text-gray-500">
-                    <span class="w-3 h-3 bg-green-600 rounded-full mr-2"></span> 有課程/活動
-                </div>
-            </div>
-            <div id="event-list" class="flex flex-col gap-6">
-                </div>
-        </div>
+    .cal-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .cal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+    .cal-title { font-size: 1.5rem; font-weight: bold; margin: 0; }
+    .cal-btn { background: rgba(255,255,255,0.1); border: none; width: 40px; height: 40px; border-radius: 50%; color: inherit; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+    .cal-btn:hover { background: rgba(255,255,255,0.2); }
+    
+    .cal-grid-7 { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; gap: 10px; margin-bottom: 1rem; }
+    .cal-weekday { font-weight: bold; opacity: 0.6; margin-bottom: 10px; }
+    
+    .day-muted { opacity: 0.2; }
+    .day-normal { cursor: pointer; padding: 5px 0; transition: 0.2s; }
+    .day-normal:hover { color: #16a34a; font-weight: bold; }
+    .day-active { background: #16a34a; color: white; width: 36px; height: 36px; line-height: 36px; border-radius: 50%; margin: 0 auto; font-weight: bold; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 10px rgba(22, 163, 74, 0.4); }
+    .day-active:hover { background: #15803d; transform: scale(1.1); }
+    
+    .event-card { display: flex; gap: 1rem; padding-bottom: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); text-decoration: none; color: inherit; transition: 0.2s; }
+    .event-card:hover { opacity: 0.7; transform: translateX(5px); }
+    .event-icon { width: 45px; height: 45px; background: #16a34a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+</style>
 
-        <div class="lg:col-span-3 bg-gray-50 dark:bg-gray-800 rounded-3xl p-6 md:p-8 border border-gray-200 dark:border-gray-700 shadow-sm">
-            <div class="flex justify-between items-center mb-8">
-                <h2 id="monthYear" class="text-2xl font-bold text-gray-800 dark:text-gray-100 tracking-wider"></h2>
-                <div class="flex space-x-3">
-                    <button id="prevBtn" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-700 rounded-full shadow hover:bg-gray-100 transition text-lg">&lt;</button>
-                    <button id="nextBtn" class="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-700 rounded-full shadow hover:bg-gray-100 transition text-lg">&gt;</button>
-                </div>
-            </div>
-            <div class="grid grid-cols-7 gap-2 text-center text-gray-500 dark:text-gray-400 font-medium mb-4">
-                <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
-            </div>
-            <div id="calendarDays" class="grid grid-cols-7 gap-y-4 gap-x-2 text-center items-center">
-                </div>
+<div class="cal-wrapper">
+    <div class="cal-left">
+        <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 1.5rem;">最新動態</h1>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem; opacity: 0.8; font-size: 0.9rem;">
+            <span style="width: 12px; height: 12px; background: #16a34a; border-radius: 50%; display: inline-block;"></span> 
+            表示當日有課程/活動
         </div>
+        <div id="event-list">
+            </div>
+    </div>
+
+    <div class="cal-right cal-box">
+        <div class="cal-header">
+            <h2 id="monthYear" class="cal-title"></h2>
+            <div style="display: flex; gap: 10px;">
+                <button id="prevBtn" class="cal-btn">&lt;</button>
+                <button id="nextBtn" class="cal-btn">&gt;</button>
+            </div>
+        </div>
+        <div class="cal-grid-7 cal-weekday">
+            <div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div>
+        </div>
+        <div id="calendarDays" class="cal-grid-7">
+            </div>
     </div>
 </div>
 
 <script>
-// 1. 把您在後台建立的活動抓出來
+// 1. 抓取後台活動
 const events = [
     {{ range .Pages }}
     {
@@ -44,7 +64,7 @@ const events = [
     {{ end }}
 ];
 
-// 2. 負責畫月曆的程式碼
+// 2. 月曆邏輯
 const monthYear = document.getElementById('monthYear');
 const calendarDays = document.getElementById('calendarDays');
 const eventList = document.getElementById('event-list');
@@ -62,31 +82,29 @@ function renderCalendar() {
     monthYear.innerHTML = `${year}年 ${month + 1}月`;
     let days = "";
 
-    // 上個月的尾巴
+    // 上月
     for (let x = firstDayIndex; x > 0; x--) {
-        days += `<div class="text-gray-300 dark:text-gray-600">${prevLastDay - x + 1}</div>`;
+        days += `<div class="day-muted">${prevLastDay - x + 1}</div>`;
     }
 
-    // 這個月的日子
+    // 當月
     for (let i = 1; i <= lastDay; i++) {
         let currentDayStr = `${year}-${String(month+1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
         let hasEvent = events.some(e => e.date === currentDayStr);
         
         if (hasEvent) {
-            // 有活動的日子變成深綠色圓圈
-            days += `<div><span class="flex items-center justify-center w-8 h-8 mx-auto bg-green-600 text-white rounded-full font-bold cursor-pointer hover:bg-green-700 shadow-md transition transform hover:scale-110" onclick="renderEvents('${currentDayStr}')">${i}</span></div>`;
+            days += `<div><div class="day-active" onclick="renderEvents('${currentDayStr}')">${i}</div></div>`;
         } else {
-            // 平凡的日子
-            days += `<div class="cursor-pointer hover:font-bold hover:text-green-600 transition" onclick="renderEvents('${currentDayStr}')">${i}</div>`;
+            days += `<div><div class="day-normal" onclick="renderEvents('${currentDayStr}')">${i}</div></div>`;
         }
     }
 
-    // 下個月的開頭
+    // 下月
     for (let j = 1; j <= nextDays; j++) {
-        days += `<div class="text-gray-300 dark:text-gray-600">${j}</div>`;
+        days += `<div class="day-muted">${j}</div>`;
     }
     calendarDays.innerHTML = days;
-    renderEvents(null); // 預設顯示當月所有活動
+    renderEvents(null); 
 }
 
 function renderEvents(filterDate) {
@@ -101,21 +119,17 @@ function renderEvents(filterDate) {
     }
 
     if (filteredEvents.length === 0) {
-        html = '<p class="text-gray-400 py-4">這一天（或這個月）目前沒有安排活動喔！</p>';
+        html = '<p style="opacity: 0.5; padding: 1rem 0;">這一天（或這個月）目前沒有安排活動喔！</p>';
     } else {
-        // 畫出左邊的活動清單，附帶迴紋針小圖示
         filteredEvents.forEach(e => {
             html += `
-            <a href="${e.link}" target="_blank" class="block border-b border-gray-200 dark:border-gray-700 pb-5 hover:opacity-80 transition group">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-green-700 transition shadow">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                    </div>
-                    <div class="flex-grow">
-                        <div class="text-sm text-gray-500 dark:text-gray-400 font-medium mb-1">${e.displayDate}</div>
-                        <h3 class="text-lg md:text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 transition">${e.title}</h3>
-                    </div>
-                    <div class="text-gray-400 font-bold text-xl group-hover:text-green-600 transition">↗</div>
+            <a href="${e.link}" target="_blank" class="event-card">
+                <div class="event-icon">
+                    <svg style="width:24px; height:24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                    <div style="font-size:0.85rem; opacity:0.6; margin-bottom:4px;">${e.displayDate}</div>
+                    <h3 style="font-size:1.2rem; font-weight:bold; margin:0;">${e.title}</h3>
                 </div>
             </a>`;
         });
@@ -126,6 +140,6 @@ function renderEvents(filterDate) {
 document.getElementById('prevBtn').addEventListener('click', () => { date.setMonth(date.getMonth() - 1); renderCalendar(); });
 document.getElementById('nextBtn').addEventListener('click', () => { date.setMonth(date.getMonth() + 1); renderCalendar(); });
 
-renderCalendar(); // 啟動月曆！
+renderCalendar();
 </script>
 {{ end }}
