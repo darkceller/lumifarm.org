@@ -8,7 +8,7 @@ export async function onRequest(context) {
       headers: { 
         'Accept': 'application/json', 
         'Content-Type': 'application/json',
-        'User-Agent': 'Cloudflare-Pages-CMS' // 增加這行讓 GitHub 更開心
+        'User-Agent': 'Cloudflare-Pages'
       },
       body: JSON.stringify({
         client_id: context.env.GITHUB_CLIENT_ID,
@@ -18,24 +18,39 @@ export async function onRequest(context) {
     });
     
     const data = await response.json();
-    
-    // 如果 GitHub 回傳錯誤（例如剛才的授權碼過期了），我們印出錯誤原因
-    if (data.error) {
-      return new Response(`GitHub 認證錯誤: ${data.error_description}`, { status: 400 });
+    const token = data.access_token;
+
+    if (!token) {
+      return new Response("無法取得 GitHub 授權碼，請重新登入。", { status: 400 });
     }
     
-    const token = data.access_token;
+    // 💡 加入了 Decap CMS 專屬的「秘密握手對話」腳本
+    const script = `
+    <script>
+      (function() {
+        // 第二步：當收到大視窗的回應時，才把真正的密碼丟過去
+        function receiveMessage(e) {
+          window.opener.postMessage(
+            'authorization:github:success:{"token":"${token}","provider":"github"}',
+            e.origin
+          );
+          // 密碼成功送達後，小視窗功成身退
+          window.removeEventListener("message", receiveMessage);
+          setTimeout(() => window.close(), 100);
+        }
+        
+        window.addEventListener("message", receiveMessage, false);
+        
+        // 第一步：小視窗主動向大視窗喊話「我回來了！」
+        window.opener.postMessage("authorizing:github", "*");
+      })();
+    </script>
+    `;
     
-    // 💡 修正了這裡！移除了多餘的括號，確保回傳乾淨的 JSON
-    return new Response(
-      `<!DOCTYPE html><html><body><script>
-        const message = 'authorization:github:success:' + JSON.stringify({token: "${token}", provider: "github"});
-        window.opener.postMessage(message, "*");
-        window.close();
-      </script></body></html>`,
-      { headers: { "content-type": "text/html;charset=UTF-8" } }
-    );
+    return new Response(`<!DOCTYPE html><html><body>${script}</body></html>`, {
+      headers: { "content-type": "text/html;charset=UTF-8" }
+    });
   } catch (error) {
-    return new Response("系統發生錯誤，無法與 GitHub 連線。", { status: 500 });
+    return new Response("系統連線錯誤。", { status: 500 });
   }
 }
