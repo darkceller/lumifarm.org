@@ -27,17 +27,20 @@ theme = 'blowfish'
 # 頂部導覽列選單設定 (weight 代表排序，數字越小越前面)
 # ==========================================
 
-[[menu.main]]
-  name = "關於我們"
-  url = "/about/"
-  weight = 10
-
-[[menu.main]]
-  name = "永續農耕知識庫"
-  url = "/posts/"    # 點擊會進入所有文章的列表
-  weight = 20
-
-[[menu.main]]
-  name = "訪談精華"
-  url = "/interviews/"
-  weight = 30
+[menu]
+  [[menu.main]]
+    name = "關於我們"
+    pageRef = "/about"
+    weight = 10
+  [[menu.main]]
+    name = "永續農耕知識庫"
+    pageRef = "/posts"
+    weight = 20
+  [[menu.main]]
+    name = "參與行動"
+    pageRef = "/events"
+    weight = 30
+  [[menu.main]]
+    name = "支持我們"
+    pageRef = "/support"
+    weight = 40
