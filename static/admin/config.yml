@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: darkceller/lumifarm.org # 👈 請確認這是您的儲存庫名稱
+  branch: main
+
+media_folder: "static/images/uploads" # 圖片上傳後的存放路徑
+public_folder: "/images/uploads"      # 網頁讀取圖片的路徑
+
+collections:
+  # 設定「知識庫文章」的編輯區
+  - name: "posts"
+    label: "知識庫文章"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "標題", name: "title", widget: "string"}
+      - {label: "發布日期", name: "date", widget: "datetime"}
+      - {label: "摘要", name: "summary", widget: "text", required: false}
+      - {label: "內文", name: "body", widget: "markdown"}

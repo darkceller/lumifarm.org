@@ -1,0 +1,11 @@
+/* 讓首頁大標題與願景文字更亮、更立體 */
+.hero-header h1, .hero-header p {
+    color: #ffffff !important; /* 強制純白 */
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8); /* 增加黑色陰影墊底 */
+    font-weight: 600; /* 加粗一點點 */
+}
+
+/* 讓「最近文章」的標題也更清晰 */
+.home-recent-posts h2, .home-recent-posts a {
+    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+}

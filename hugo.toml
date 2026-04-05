@@ -1,0 +1,43 @@
+baseURL = 'https://www.lumifarm.org/'
+languageCode = 'zh-tw'
+title = '光農合作社群 LumiFarm'
+theme = 'blowfish'
+
+[params]
+  customCSS = ["css/custom.css"]
+  
+  [params.header]
+    showLogo = true
+    logo = "images/logo.png"
+
+  [params.homepage]
+    showRecent = true
+    layout = "background"
+    homepageImage = "images/food-forest-bg.png"
+    # 這裡可以嘗試增加一個半透明的遮罩，讓背景變暗，文字更顯眼
+    imageFilter = "brightness(0.4) contrast(1.1)"
+
+  [params.article]
+    showDate = true
+   showReadingTime = true
+    showAuthor = false
+    # 開啟卡片模式
+    layout = "card"
+# ==========================================
+# 頂部導覽列選單設定 (weight 代表排序，數字越小越前面)
+# ==========================================
+
+[[menu.main]]
+  name = "關於我們"
+  url = "/about/"
+  weight = 10
+
+[[menu.main]]
+  name = "永續農耕知識庫"
+  url = "/posts/"    # 點擊會進入所有文章的列表
+  weight = 20
+
+[[menu.main]]
+  name = "訪談精華"
+  url = "/interviews/"
+  weight = 30
