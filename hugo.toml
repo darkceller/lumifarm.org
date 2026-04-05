@@ -1,6 +1,7 @@
 baseURL = 'https://www.lumifarm.org/'
 languageCode = 'zh-tw'
-title = '光農合作社群 LumiFarm'
+title = '光農合作社群 Lumiuous Farmer's Network'
+buildFuture = true
 theme = 'blowfish'
 
 [params]
