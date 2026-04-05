@@ -12,7 +12,7 @@ theme = 'blowfish'
     logo = "images/logo.png"
 
   [params.homepage]
-    showRecent = true
+    showRecent = false
     layout = "background"
     homepageImage = "images/food-forest-bg.png"
     # 這裡可以嘗試增加一個半透明的遮罩，讓背景變暗，文字更顯眼
