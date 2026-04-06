@@ -106,3 +106,10 @@ header nav ul li a {
     padding-right: 0.5rem !important;
     white-space: nowrap !important; /* 強制不換行！ */
 }
+/* ==========================================
+   文章與活動標題排版優化：防止多行文字重疊
+   ========================================== */
+h1, .article-title, header h1 {
+    line-height: 1.4 !important; /* 👉 加大行高，讓多行文字有舒適的間距 */
+    padding-bottom: 0.5rem;      /* 👉 稍微增加標題底部的空間 */
+}
