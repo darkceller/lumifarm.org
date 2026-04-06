@@ -4,6 +4,10 @@ title = "光農合作社群"
 buildFuture = true
 theme = 'blowfish'
 
+# 👇 新增這個區塊：告訴系統要產出 JSON 搜尋字典
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [params]
   defaultAppearance = "dark"
   disableThemeToggle = true
