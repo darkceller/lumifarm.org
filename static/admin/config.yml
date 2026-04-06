@@ -16,6 +16,7 @@ collections:
     folder: "content/news"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "news/{{slug}}"
     fields:
       - {label: "標題", name: "title", widget: "string"}
       - {label: "發布日期", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ"}
@@ -28,6 +29,7 @@ collections:
     folder: "content/records"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "records/{{slug}}"
     fields:
       - {label: "活動名稱/標題", name: "title", widget: "string"}
       - {label: "活動日期", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ"}
@@ -40,6 +42,7 @@ collections:
     folder: "content/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "posts/{{slug}}"
     fields:
       - {label: "標題", name: "title", widget: "string"}
       - {label: "日期", name: "date", widget: "datetime"}
@@ -51,6 +54,7 @@ collections:
     folder: "content/events"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "events/{{slug}}"
     fields:
       - {label: "活動名稱", name: "title", widget: "string"}
       - {label: "活動日期", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ"}
