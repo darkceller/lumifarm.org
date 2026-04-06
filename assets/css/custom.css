@@ -97,3 +97,12 @@ iframe[title="志工報名表"], iframe[title="活動報名表"] {
         box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2) !important;
     }
 }
+/* ==========================================
+   導覽列排版優化：防止文字斷行
+   ========================================== */
+header nav ul li a {
+    font-size: 0.95rem !important; /* 稍微縮小字體 */
+    padding-left: 0.5rem !important; /* 減少左右間距 */
+    padding-right: 0.5rem !important;
+    white-space: nowrap !important; /* 強制不換行！ */
+}

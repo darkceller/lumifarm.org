@@ -4,6 +4,8 @@ backend:
   branch: main
   base_url: https://www.lumifarm.org
   auth_endpoint: api/auth
+  # 告訴 CMS 您的前台網址在哪裡
+  site_url: "https://www.lumifarm.org"
 
 media_folder: "static/images"
 public_folder: "/images"
