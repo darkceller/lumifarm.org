@@ -6,7 +6,7 @@ cascade:
 ---
 
 <div style="width: 100%; max-width: 1000px; margin: 2rem auto 3rem auto; text-align: center;">
-  <img src="/images/volunteer-recruitment.png" alt="光農合作社群主視覺" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+  <img src="/images/hero.png" alt="光農合作社群主視覺" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
 </div>
 
 <div style="text-align: center; max-width: 800px; margin: 0 auto 6rem auto; color: white;">
