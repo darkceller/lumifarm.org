@@ -23,3 +23,20 @@ body {
 .dark\:bg-neutral-800 {
     background-color: transparent !important;
 }
+
+/* 將導覽列的「支持我們」變成醒目的行動呼籲按鈕 */
+/* ⚠️ 如果您「支持我們」的網址不是 /support，請將下面三處的 /support 替換成實際路徑（例如 /donate） */
+header a[href*="/support"] {
+    background-color: #059669 !important; /* 光農綠色 */
+    color: #ffffff !important; /* 純白文字 */
+    padding: 0.4rem 1.2rem !important; /* 撐開按鈕空間 */
+    border-radius: 99px !important; /* 橢圓形膠囊狀 */
+    font-weight: 700 !important; /* 字體加粗 */
+    box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3) !important; /* 加上一點立體陰影 */
+    transition: all 0.2s ease-in-out !important;
+}
+
+header a[href*="/support"]:hover {
+    transform: translateY(-2px) !important; /* 滑鼠移過去微幅上浮 */
+    opacity: 0.9 !important;
+}
