@@ -1,0 +1,28 @@
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+  {{ range first 3 (where .Site.RegularPages "Section" "posts") }}
+  
+  <a href="{{ .RelPermalink }}" style="text-decoration: none; color: inherit; display: block; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; height: 100%; box-sizing: border-box; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+      
+      {{ $image := .Params.featureimage | default "/images/volunteer-recruitment.png" }}
+      <img src="{{ $image }}" alt="{{ .Title }}" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,0.05);">
+      
+      <div style="padding: 1.5rem;">
+        <div style="color: #4ade80; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.5rem;">
+          📅 {{ .Date.Format "2006 年 01 月 02 日" }}
+        </div>
+        <h3 style="font-size: 1.25rem; margin-top: 0; margin-bottom: 0.8rem; font-weight: bold; line-height: 1.4; color: #f8fafc;">{{ .Title }}</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.8; margin-bottom: 0; color: #cbd5e1;">
+          {{ .Summary | truncate 80 }}
+        </p>
+      </div>
+    </div>
+  </a>
+  {{ end }}
+</div>
+
+<div style="text-align: center; margin-bottom: 4rem;">
+    <a href="/posts" style="display: inline-block; border: 1px solid rgba(255,255,255,0.3); color: white; padding: 10px 28px; border-radius: 99px; text-decoration: none; font-size: 1rem; transition: all 0.3s;" onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)';" onmouseout="this.style.backgroundColor='transparent';">
+      閱讀更多農場日誌 ➔
+    </a>
+</div>
