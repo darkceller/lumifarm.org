@@ -68,6 +68,11 @@ theme = 'blowfish'
     weight = 25
 
   [[menu.main]]
+    name = "活動紀實"
+    pageRef = "/records/"
+    weight = 28
+
+  [[menu.main]]
     name = "永續知識"
     pageRef = "/posts"
     weight = 30

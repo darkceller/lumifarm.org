@@ -21,6 +21,18 @@ collections:
       - {label: "摘要簡介 (顯示在首頁卡片)", name: "summary", widget: "text", required: false}
       - {label: "內文", name: "body", widget: "markdown"}
 
+  - name: "records"
+    label: "📸 活動紀實"
+    folder: "content/records"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "活動名稱/標題", name: "title", widget: "string"}
+      - {label: "活動日期", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ"}
+      - {label: "活動照片 (這會變成超美封面圖)", name: "featureimage", widget: "image"}
+      - {label: "活動簡短摘要 (顯示在卡片上)", name: "summary", widget: "text", required: false}
+      - {label: "詳細紀錄內文", name: "body", widget: "markdown"}
+
   - name: "posts"
     label: "📚 知識庫文章"
     folder: "content/posts"
