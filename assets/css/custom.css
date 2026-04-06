@@ -99,3 +99,18 @@ iframe[title="志工報名表"] {
         box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2) !important;
     }
 }
+/* ==========================================
+   移除文章區塊預設的黑色半透明遮罩
+   ========================================== */
+
+/* 隱藏 Blowfish 預設的 article 背景色與邊框 */
+article.prose {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 如果主題有使用特定的 class 來設定背景，一併強制透明 */
+.bg-neutral-800\/50, .bg-neutral-900\/50 {
+    background-color: transparent !important;
+}
