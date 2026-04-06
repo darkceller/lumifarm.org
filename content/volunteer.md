@@ -40,9 +40,7 @@ menu:
       <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #4ade80; margin-top: 4px;">■</span> <span><strong>地點：</strong> 樸爪農園</span></li>
       <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #4ade80; margin-top: 4px;">■</span> <span><strong>活動：</strong> 友善農耕體驗 + Potluck 共食派對</span></li>
     </ul>
-    <a href="#" target="_blank" style="display: inline-block; background-color: #059669; color: white; padding: 12px 32px; border-radius: 99px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all 0.2s; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.4);" onmouseover="this.style.transform='translateY(-2px)'; this.style.opacity='0.9'" onmouseout="this.style.transform='translateY(0)'; this.style.opacity='1'">
-      👉 訂閱substack電子報即可報名加入
-    </a>
+    <iframe src="https://tally.so/embed/EkDerq?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="志工報名表"></iframe>
   </div>
 </div>
 
