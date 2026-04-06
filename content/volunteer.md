@@ -40,7 +40,20 @@ menu:
       <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #4ade80; margin-top: 4px;">■</span> <span><strong>地點：</strong> 樸爪農園</span></li>
       <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 10px;"><span style="color: #4ade80; margin-top: 4px;">■</span> <span><strong>活動：</strong> 友善農耕體驗 + Potluck 共食派對</span></li>
     </ul>
-    <iframe src="https://tally.so/embed/EkDerq?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0" title="志工報名表"></iframe>
+    <div style="background: rgba(15, 23, 42, 0.5); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-sizing: border-box; width: 100%; margin: 2rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+  
+  <iframe 
+    src="https://tally.so/embed/您的表單ID?transparentBackground=1&dynamicHeight=1&alignLeft=1&hideTitle=1" 
+    loading="lazy" 
+    width="100%" 
+    height="600" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0" 
+    title="志工報名表" 
+    style="border: none; width: 100%; border-radius: 8px;">
+  </iframe>
+</div>
   </div>
 </div>
 

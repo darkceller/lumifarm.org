@@ -40,3 +40,55 @@ header a[href*="/support"]:hover {
     transform: translateY(-2px) !important; /* 滑鼠移過去微幅上浮 */
     opacity: 0.9 !important;
 }
+
+/* ==========================================
+   強制全站暗色系與 Tally 表單優化
+   ========================================== */
+
+/* 保險：確保在所有模式下 body 都有森林背景 */
+body {
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                url('/images/forest-bg.png') no-repeat center center fixed !important;
+    background-size: cover !important;
+}
+
+/* 強制暗色系背景，覆蓋 Blowfish 可能的亮色預設 */
+body.light-mode {
+    color: #cbd5e1 !important;
+}
+body.light-mode header,
+body.light-mode footer,
+body.light-mode main {
+    background-color: transparent !important;
+}
+
+/* 隱藏主題切換鈕 (安全保險) */
+.theme-toggle {
+    display: none !important;
+}
+
+/* 🏆 Tally 輸入框質感降白魔法：
+   將 Tally 免費版無法修改的亮白輸入框，變成更有質感的暗灰霧面，
+   並讓文字變成白色，與網站風格完美統一。
+*/
+iframe[title="志工報名表"] {
+    background-color: transparent !important;
+}
+
+/* 這段需要 unsafe = true 權限才能生效 */
+@media screen and (min-width: 0) {
+    [data-tally-input-group] input,
+    [data-tally-input-group] select,
+    [data-tally-input-group] textarea {
+        background-color: rgba(255, 255, 255, 0.08) !important; /* 暗灰霧面背景 */
+        color: #ffffff !important; /* 純白文字 */
+        border: 1px solid rgba(255, 255, 255, 0.1) !important; /* 細微的白色邊框 */
+        border-radius: 8px !important;
+    }
+
+    [data-tally-input-group] input:focus,
+    [data-tally-input-group] textarea:focus {
+        border-color: #059669 !important; /* 聚焦時顯示光農綠 */
+        box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2) !important;
+    }
+}
