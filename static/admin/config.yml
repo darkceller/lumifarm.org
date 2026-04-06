@@ -9,6 +9,18 @@ media_folder: "static/images"
 public_folder: "/images"
 
 collections:
+  - name: "news"
+    label: "📢 光農快訊"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "標題", name: "title", widget: "string"}
+      - {label: "發布日期", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ"}
+      - {label: "封面圖片", name: "featureimage", widget: "image", required: false}
+      - {label: "摘要簡介 (顯示在首頁卡片)", name: "summary", widget: "text", required: false}
+      - {label: "內文", name: "body", widget: "markdown"}
+
   - name: "posts"
     label: "📚 知識庫文章"
     folder: "content/posts"
@@ -27,6 +39,6 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "活動名稱", name: "title", widget: "string"}
-      - {label: "活動日期", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "活動日期", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ"}
       - {label: "報名連結", name: "link", widget: "string", required: false}
       - {label: "活動詳情", name: "body", widget: "markdown", required: false}
