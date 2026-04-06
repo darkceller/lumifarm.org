@@ -4,6 +4,9 @@ title = "光農合作社群 Luminous Farmer's Network"
 buildFuture = true
 theme = 'blowfish'
 
+# 👇 新增這行：光農專屬中文版權宣告 (使用 <br> 來進行漂亮的多行排版)
+copyright = "© 2026 光農合作社群 Luminous Farmer's Network。<br>除非另有說明，本網站上的所有原創素材（包含文字、圖片及視覺內容），其智慧財產權均屬光農合作社群所有。<br>部分內容依照創用 CC (Creative Commons) 授權條款分享，並已適當標註原創作者。<br>如需轉載或散佈本站原創內容，請[與我們聯絡](/about)。"
+
 [params]
   defaultAppearance = "dark"
   disableThemeToggle = true
@@ -21,11 +24,18 @@ theme = 'blowfish'
     imageFilter = "brightness(0.4) contrast(1.1)"
 
   [params.article]
-    showDate = true
-    showReadingTime = true
+    showDate = false         # 👉 改成 false
+    showReadingTime = false  # 👉 改成 false
+    showWordCount = false    # 👉 新增這行，強制隱藏字數
     showAuthor = false
-    # 開啟卡片模式
     layout = "card"
+
+  # 👇 新增這個區塊，確保其他獨立頁面也不會跑出日期
+  [params.page]
+    showDate = false
+    showReadingTime = false
+    showWordCount = false
+    showAuthor = false
 
 # ==========================================
 # 頂部導覽列選單設定
