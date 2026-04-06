@@ -9,13 +9,15 @@ theme = 'blowfish'
   disableThemeToggle = true
   logo = "logo.png"
 
-# 👇 專門為 Blowfish 主題設定的頁尾宣告
+  # 👇 1. 新增這行 Blowfish 真正認得的版權變數 (注意 { year } 會自動抓取今年年份！)
+  copyright = "© { year } 光農合作社群 Luminous Farmer's Network。<br>除非另有說明，本網站上的所有原創素材（包含文字、圖片及視覺內容），其智慧財產權均屬光農合作社群所有。<br>部分內容依照創用 CC (Creative Commons) 授權條款分享，並已適當標註原創作者。<br>如需轉載或散佈本站原創內容，請[與我們聯絡](/about)。"
+
+# 👇 2. 修正頁尾設定
   [params.footer]
-    showCopyright = false  # 👉 關閉主題預設的短版宣告，避免重複
-    showThemeAttribution = false
-    # 👇 啟用我們精心排版的自訂宣告，這支援 HTML 與 Markdown
-    customText = "© 2026 光農合作社群 Luminous Farmer's Network。<br>除非另有說明，本網站上的所有原創素材（包含文字、圖片及視覺內容），其智慧財產權均屬光農合作社群所有。<br>部分內容依照創用 CC (Creative Commons) 授權條款分享，並已適當標註原創作者。<br>如需轉載或散佈本站原創內容，請[與我們聯絡](/about)。"
-  
+    showCopyright = true          # 👉 必須改為 true，把頁尾喚醒！
+    showThemeAttribution = false  # 👉 保持 false，這會完美隱藏原廠的 Powered by 廣告
+    # (把原本的 customText 整行刪除，保持檔案乾淨)
+
   [params.header]
     showLogo = true
     logo = "logo.png"
