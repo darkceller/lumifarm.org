@@ -2,11 +2,17 @@
 title: "志工招募"
 description: "加入光農合作社群，在泥土中找回生活的節奏，與我們一起實踐永續農業。"
 type: "page"
+showDate: false
+showAuthor: false
+showReadingTime: false
+showWordCount: false
+menu:
+  main:
+    name: "志工招募"
+    weight: 40
 ---
 
-<img src="/images/volunteer-recruitment.png" alt="光農志工大合照" style="width: 100%; border-radius: 12px; margin-bottom: 3rem; object-fit: cover; max-height: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-
-<div style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8;">
+<div style="max-width: 800px; margin: 0 auto; text-align: center; line-height: 1.8; padding-top: 2rem;">
   <h2 style="color: #4ade80; font-size: 2.2rem; margin-bottom: 1rem;">雙手沾滿泥土，找回與土地的連結</h2>
   <p style="font-size: 1.1rem; opacity: 0.9;">在光農合作社群，我們相信「人」是永續農業中最關鍵的一環。志工不僅是協助農務的幫手，更是與我們一起共學、共創生態家園的夥伴。無論你是協助種植原生植物、照顧食物森林，還是參與農地管理，你的每一滴汗水都在為這片土地帶來真實的改變。</p>
 
