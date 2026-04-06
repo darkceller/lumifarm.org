@@ -41,19 +41,19 @@ theme = 'blowfish'
     weight = 15
 
   [[menu.main]]
-    name = "光農共生圈"
+    name = "光農碳積分"
     pageRef = "/community"
     weight = 20
 
   [[menu.main]]
-    name = "永續農耕知識庫"
-    pageRef = "/posts"
+    name = "志工招募"
+    pageRef = "/volunteer"
     weight = 25
 
   [[menu.main]]
-   name = "志工招募"
-   pageRef = "/volunteer"
-   weight = 30
+    name = "永續知識"
+    pageRef = "/posts"
+    weight = 30
 
   [[menu.main]]
     name = "支持我們"
