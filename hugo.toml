@@ -5,8 +5,8 @@ buildFuture = true
 theme = 'blowfish'
 
 [params]
-  defaultAppearance = "dark"    # 👉 強制全站預設外觀為暗色
-  showThemeToggle = false      # 👉 隱藏右上角的主題切換按鈕
+  defaultAppearance = "dark"
+  disableThemeToggle = true
   logo = "logo.png"
   
   [params.header]
