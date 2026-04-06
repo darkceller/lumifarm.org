@@ -96,3 +96,7 @@ theme = 'blowfish'
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+  [services]
+  [services.googleAnalytics]
+    id = "G-M7RC0129X5"
