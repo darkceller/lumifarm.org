@@ -8,18 +8,18 @@ theme = 'blowfish'
   defaultAppearance = "dark"
   disableThemeToggle = true
   logo = "logo.png"
+  
+  # 👇 把它放在這裡！這才是 Blowfish 真正認得的護身符！
+  copyright = "© { year } 光農合作社群 Luminous Farmer's Network。<br>除非另有說明，本網站上的所有原創素材（包含文字、圖片及視覺內容），其智慧財產權均屬光農合作社群所有。<br>部分內容依照創用 CC (Creative Commons) 授權條款分享，並已適當標註原創作者。<br>如需轉載或散佈本站原創內容，請<a href='/about' style='color: #4ade80; text-decoration: underline;'>與我們聯絡</a>。<br><br><a href='/admin' style='color: rgba(255,255,255,0.2); font-size: 0.8rem; text-decoration: none;' onmouseover=\"this.style.color='#4ade80'\" onmouseout=\"this.style.color='rgba(255,255,255,0.2)'\">⚙️ 管理員登入</a>"
 
-# 👇 2. 修正頁尾設定
+# 👇 頁尾區塊只要保持這樣乾淨就好，把 customText 整行刪除！
 [params.footer]
     showCopyright = true
     showThemeAttribution = false
-    # 👇 替換成這段：結尾加上了管理員專屬的捷徑
-    customText = "© { year } 光農合作社群 Luminous Farmer's Network。<br>除非另有說明，本網站上的所有原創素材（包含文字、圖片及視覺內容），其智慧財產權均屬光農合作社群所有。<br>部分內容依照創用 CC (Creative Commons) 授權條款分享，並已適當標註原創作者。<br>如需轉載或散佈本站原創內容，請<a href='/about' style='color: #4ade80; text-decoration: underline;'>與我們聯絡</a>。<br><br><a href='/admin' style='color: rgba(255,255,255,0.2); font-size: 0.8rem; text-decoration: none;' onmouseover=\"this.style.color='#4ade80'\" onmouseout=\"this.style.color='rgba(255,255,255,0.2)'\">⚙️ 管理員登入</a>"
 
   [params.header]
     showLogo = true
-    logo = "logo.png"
-    logoText = "光農合作社群"  # 👉 新增這行：強制導覽列只顯示簡短中文，就不會擠成一團了！
+# ... (下面維持原樣) ...
 
   [params.homepage]
     showRecent = false
