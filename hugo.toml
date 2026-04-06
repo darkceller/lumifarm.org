@@ -4,13 +4,17 @@ title = "光農合作社群 Luminous Farmer's Network"
 buildFuture = true
 theme = 'blowfish'
 
-# 👇 新增這行：光農專屬中文版權宣告 (使用 <br> 來進行漂亮的多行排版)
-copyright = "© 2026 光農合作社群 Luminous Farmer's Network。<br>除非另有說明，本網站上的所有原創素材（包含文字、圖片及視覺內容），其智慧財產權均屬光農合作社群所有。<br>部分內容依照創用 CC (Creative Commons) 授權條款分享，並已適當標註原創作者。<br>如需轉載或散佈本站原創內容，請[與我們聯絡](/about)。"
-
 [params]
   defaultAppearance = "dark"
   disableThemeToggle = true
   logo = "logo.png"
+
+# 👇 專門為 Blowfish 主題設定的頁尾宣告
+  [params.footer]
+    showCopyright = false  # 👉 關閉主題預設的短版宣告，避免重複
+    showThemeAttribution = false
+    # 👇 啟用我們精心排版的自訂宣告，這支援 HTML 與 Markdown
+    customText = "© 2026 光農合作社群 Luminous Farmer's Network。<br>除非另有說明，本網站上的所有原創素材（包含文字、圖片及視覺內容），其智慧財產權均屬光農合作社群所有。<br>部分內容依照創用 CC (Creative Commons) 授權條款分享，並已適當標註原創作者。<br>如需轉載或散佈本站原創內容，請[與我們聯絡](/about)。"
   
   [params.header]
     showLogo = true
