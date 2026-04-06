@@ -1,21 +1,19 @@
 ---
-title: "光農合作社群"
+title: "光農合作社群 Luminous Farmer's Network"
 cascade:
   showDate: false
   showAuthor: false
 ---
 
-<div style="text-align: center; max-width: 800px; margin: 4rem auto 6rem auto; color: white;">
-  
-  <h1 style="font-size: 3rem; margin-bottom: 1.5rem; text-shadow: 0 2px 5px rgba(0,0,0,0.8);">光農合作社群</h1>
+<div style="text-align: center; max-width: 800px; margin: 2rem auto 6rem auto; color: white;">
   
   <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2.5rem; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">
-    OOOOOOOOOOOO (請在這裡填寫您的光農簡介文字)
+    我們是一個致力於推廣永續農耕與生態共生的合作社群。以樸爪農園為實驗基地，我們透過開放的知識共享與實地農務參與，邀請大家在泥土中找回生活的節奏，重新建立人與土地的深厚連結。
   </p>
 
   <div style="margin-bottom: 3rem; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">
-    <p style="font-size: 1.15rem; margin-bottom: 1rem;"><strong>我們的任務：</strong>OOOOOOO (請在這裡填寫任務)</p>
-    <p style="font-size: 1.15rem;"><strong>我們的願景：</strong>OOOOOOO (請在這裡填寫願景)</p>
+    <p style="font-size: 1.15rem; margin-bottom: 1rem;"><strong>我們的任務：</strong>透過舉辦共學工作坊、農務共食行動與志工參與，推廣友善土地的生態農法，讓永續生活成為人人皆可實踐的日常。</p>
+    <p style="font-size: 1.15rem;"><strong>我們的願景：</strong>創造一個充滿生機、資源共享的生態圈，讓每一片土地都能重獲生機，並激發人類與自然和諧共存的無限可能。</p>
   </div>
 
   <div style="margin-bottom: 3rem;">
