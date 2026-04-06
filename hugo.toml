@@ -35,10 +35,10 @@ theme = 'blowfish'
     pageRef = "/about"
     weight = 10
 
- [[main]]
-  name = "光農快訊"
-  pageRef = "/news"
-  weight = 15
+  [[menu.main]]
+    name = "光農快訊"
+    url = "/news/"    # 👉 換成 url，並加上斜線
+    weight = 15
 
   [[menu.main]]
     name = "光農共生圈"
