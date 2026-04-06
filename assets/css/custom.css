@@ -1,15 +1,19 @@
-/* 讓首頁大標題與願景文字更亮、更立體 */
+/* ==========================================
+   1. 首頁與標題優化
+   ========================================== */
 .hero-header h1, .hero-header p {
     color: #ffffff !important; /* 強制純白 */
     text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.8); /* 增加黑色陰影墊底 */
     font-weight: 600; /* 加粗一點點 */
 }
 
-/* 讓「最近文章」的標題也更清晰 */
 .home-recent-posts h2, .home-recent-posts a {
     text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
 }
-/* 強制覆蓋全站背景（請確認檔名是 food-forest-bg.png 還是您改過的其他名字） */
+
+/* ==========================================
+   2. 全站森林背景與主題切換按鈕隱藏
+   ========================================== */
 html, body {
     background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
                       url('/images/food-forest-bg.png') !important;
@@ -18,48 +22,11 @@ html, body {
     background-position: center !important;
 }
 
-/* 雙重保險：強制隱藏切換按鈕 */
-button[id^="appearance-switcher"] {
-    display: none !important;
+button[id^="appearance-switcher"], .theme-toggle {
+    display: none !important; /* 雙重保險：隱藏右上角切換鈕 */
 }
 
-/* 確保 Blowfish 原本的預設背景色變透明，才不會把我們的圖片擋住 */
-.bg-neutral {
-    background-color: transparent !important;
-}
-.dark\:bg-neutral-800 {
-    background-color: transparent !important;
-}
-
-/* 將導覽列的「支持我們」變成醒目的行動呼籲按鈕 */
-/* ⚠️ 如果您「支持我們」的網址不是 /support，請將下面三處的 /support 替換成實際路徑（例如 /donate） */
-header a[href*="/support"] {
-    background-color: #059669 !important; /* 光農綠色 */
-    color: #ffffff !important; /* 純白文字 */
-    padding: 0.4rem 1.2rem !important; /* 撐開按鈕空間 */
-    border-radius: 99px !important; /* 橢圓形膠囊狀 */
-    font-weight: 700 !important; /* 字體加粗 */
-    box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3) !important; /* 加上一點立體陰影 */
-    transition: all 0.2s ease-in-out !important;
-}
-
-header a[href*="/support"]:hover {
-    transform: translateY(-2px) !important; /* 滑鼠移過去微幅上浮 */
-    opacity: 0.9 !important;
-}
-
-/* ==========================================
-   強制全站暗色系與 Tally 表單優化
-   ========================================== */
-
-/* 保險：確保在所有模式下 body 都有森林背景 */
-body {
-    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
-                url('/images/forest-bg.png') no-repeat center center fixed !important;
-    background-size: cover !important;
-}
-
-/* 強制暗色系背景，覆蓋 Blowfish 可能的亮色預設 */
+/* 確保亮色模式被觸發時，依舊保持暗色系與透明背景 */
 body.light-mode {
     color: #cbd5e1 !important;
 }
@@ -69,16 +36,47 @@ body.light-mode main {
     background-color: transparent !important;
 }
 
-/* 隱藏主題切換鈕 (安全保險) */
-.theme-toggle {
-    display: none !important;
+/* ==========================================
+   3. 導覽列「支持我們」按鈕優化
+   ========================================== */
+header a[href*="/support"] {
+    background-color: #059669 !important; /* 光農綠色 */
+    color: #ffffff !important; /* 純白文字 */
+    padding: 0.4rem 1.2rem !important; /* 撐開按鈕空間 */
+    border-radius: 99px !important; /* 橢圓形膠囊狀 */
+    font-weight: 700 !important; /* 字體加粗 */
+    box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3) !important;
+    transition: all 0.2s ease-in-out !important;
 }
 
-/* 🏆 Tally 輸入框質感降白魔法：
-   將 Tally 免費版無法修改的亮白輸入框，變成更有質感的暗灰霧面，
-   並讓文字變成白色，與網站風格完美統一。
-*/
-iframe[title="志工報名表"] {
+header a[href*="/support"]:hover {
+    transform: translateY(-2px) !important;
+    opacity: 0.9 !important;
+}
+
+/* ==========================================
+   4. 終極移除：消滅文章中間的黑色區塊
+   ========================================== */
+/* 這裡使用了精準的 Tailwind 轉義符號，強制擊碎所有 Blowfish 預設的底色 */
+article,
+article.prose,
+.dark\:bg-neutral-800,
+.dark\:bg-neutral-900,
+.dark\:bg-neutral-800\/50,
+.dark\:bg-neutral-900\/50,
+.dark\:bg-neutral-900\/75,
+.bg-neutral-100,
+.bg-neutral-800,
+.bg-neutral-900 {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================
+   5. Tally 表單輸入框質感優化
+   ========================================== */
+iframe[title="志工報名表"], iframe[title="活動報名表"] {
     background-color: transparent !important;
 }
 
@@ -98,19 +96,4 @@ iframe[title="志工報名表"] {
         border-color: #059669 !important; /* 聚焦時顯示光農綠 */
         box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2) !important;
     }
-}
-/* ==========================================
-   移除文章區塊預設的黑色半透明遮罩
-   ========================================== */
-
-/* 隱藏 Blowfish 預設的 article 背景色與邊框 */
-article.prose {
-    background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* 如果主題有使用特定的 class 來設定背景，一併強制透明 */
-.bg-neutral-800\/50, .bg-neutral-900\/50 {
-    background-color: transparent !important;
 }
