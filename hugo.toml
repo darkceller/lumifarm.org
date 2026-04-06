@@ -6,10 +6,11 @@ theme = 'blowfish'
 
 [params]
   customCSS = ["css/custom.css"]
+  logo = "logo.png"
   
   [params.header]
     showLogo = true
-    logo = "images/logo.png"
+    logo = "logo.png"
 
   [params.homepage]
     showRecent = false
@@ -43,6 +44,11 @@ theme = 'blowfish'
     name = "永續農耕知識庫"
     pageRef = "/posts"
     weight = 20
+
+  [[menu.main]]
+   name = "志工招募"
+   pageRef = "/volunteer"
+   weight = 30
 
   [[menu.main]]
     name = "支持我們"
