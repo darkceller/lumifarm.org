@@ -45,25 +45,25 @@ cascade:
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin: 0 auto 4rem auto; max-width: 1200px;">
   
   <div style="text-align: center;">
-    <img src="/images/lesson.png" alt="永續農耕知識" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
+    <img src="/images/lesson.webp" alt="永續農耕知識" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
     <h3 style="color: #4ade80; font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; font-weight: bold; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">永續農耕知識</h3>
     <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.9; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">匯集友善土地的農耕心法，從土壤復育到生態共建，打造開放的農業知識庫。</p>
   </div>
 
   <div style="text-align: center;">
-    <img src="/images/volunteer-recruitment.png" alt="志工共學行動" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
+    <img src="/images/volunteer-recruitment.webp" alt="志工共學行動" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
     <h3 style="color: #4ade80; font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; font-weight: bold; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">志工共學行動</h3>
     <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.9; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">邀請多元背景的夥伴走入田間，在勞動中互相學習，體驗與自然共處的節奏。</p>
   </div>
 
   <div style="text-align: center;">
-    <img src="/images/party.png" alt="農務共食派對" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
+    <img src="/images/party.webp" alt="農務共食派對" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
     <h3 style="color: #4ade80; font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; font-weight: bold; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">農務共食派對</h3>
     <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.9; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">結合產地到餐桌的概念，一人一菜共享美味，在汗水過後建立緊密的社群連結。</p>
   </div>
 
   <div style="text-align: center;">
-    <img src="/images/work.png" alt="樸爪農園實作" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
+    <img src="/images/work.webp" alt="樸爪農園實作" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; margin-bottom: 1.5rem; border-radius: 8px;">
     <h3 style="color: #4ade80; font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; font-weight: bold; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">樸爪農園實作</h3>
     <p style="font-size: 0.95rem; line-height: 1.6; opacity: 0.9; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">以樸爪農園為實驗基地，將理論化為實踐，展示生態農業在台灣的無限可能性。</p>
   </div>

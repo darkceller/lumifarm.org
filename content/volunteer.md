@@ -30,7 +30,7 @@ menu:
 
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 1.5rem; margin: 0 auto 4rem auto; box-sizing: border-box; width: 100%;">
   <div style="flex: 1 1 280px; max-width: 100%;">
-    <img src="/images/volunteer-recruitment.png" alt="光農共餐志工" style="border-radius: 15px; width: 100%; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: block; margin: 0 auto;">
+    <img src="/images/volunteer-recruitment.webp" alt="光農共餐志工" style="border-radius: 15px; width: 100%; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: block; margin: 0 auto;">
   </div>
   <div style="flex: 1.5 1 280px; max-width: 100%; box-sizing: border-box; text-align: left;">
     <h2 style="margin-top: 0; color: #4ade80; font-size: 1.6rem;">🌿 2026 每月共學共餐志工招募｜在泥土中找回生活的節奏</h2>
@@ -50,8 +50,8 @@ menu:
 <h2 style="text-align: center; margin-bottom: 3rem; color: #4ade80; font-size: 2rem;">志工活動剪影</h2>
 
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 4rem;">
-  <img src="/images/volunteer-01.png" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-  <img src="/images/volunteer-02.png" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-  <img src="/images/volunteer-03.png" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-  <img src="/images/volunteer-04.png" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+  <img src="/images/volunteer-01.webp" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+  <img src="/images/volunteer-02.webp" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+  <img src="/images/volunteer-03.webp" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+  <img src="/images/volunteer-04.webp" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
 </div>

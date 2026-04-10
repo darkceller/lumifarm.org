@@ -11,7 +11,7 @@ theme = 'blowfish'
 [params]
   defaultAppearance = "dark"
   disableThemeToggle = true
-  logo = "logo.png"
+  logo = "logo.webp"
   
   # 👇 把它放在這裡！這才是 Blowfish 真正認得的護身符！
   copyright = "© { year } 光農合作社群 Luminous Farmer's Network。<br>除非另有說明，本網站上的所有原創素材（包含文字、圖片及視覺內容），其智慧財產權均屬光農合作社群所有。<br>部分內容依照創用 CC (Creative Commons) 授權條款分享，並已適當標註原創作者。<br>如需轉載或散佈本站原創內容，請<a href='/about' style='color: #4ade80; text-decoration: underline;'>與我們聯絡</a>。<br><br><a href='/admin' style='color: rgba(255,255,255,0.2); font-size: 0.8rem; text-decoration: none;' onmouseover=\"this.style.color='#4ade80'\" onmouseout=\"this.style.color='rgba(255,255,255,0.2)'\">⚙️ 管理員登入</a>"
