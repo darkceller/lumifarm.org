@@ -1,5 +1,6 @@
 ---
 title: "光農合作社群 Luminous Farmer's Network"
+description: "我們是一個致力於推廣永續農耕與生態共生的合作社群。以樸爪農園為實驗基地，邀請大家在泥土中找回生活的節奏，重新建立人與土地的深厚連結。"
 cascade:
   showDate: false
   showAuthor: false
