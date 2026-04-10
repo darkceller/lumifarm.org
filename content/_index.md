@@ -6,7 +6,7 @@ cascade:
 ---
 
 <div style="width: 100%; max-width: 1000px; margin: 2rem auto 3rem auto; text-align: center;">
-  <img src="/images/hero.webp" alt="光農合作社群主視覺" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+  <img src="/images/hero.webp" alt="光農合作社群主視覺" width="1000" height="500" fetchpriority="high" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.5);" class="medium-zoom-image">
 </div>
 
 <div style="text-align: center; max-width: 800px; margin: 0 auto 6rem auto; color: white;">
@@ -84,5 +84,5 @@ cascade:
 
 ## 💌 訂閱光農電子報
 <div style="background: white; padding: 1rem; border-radius: 8px; margin-top: 1rem; margin-bottom: 3rem;">
-  <iframe src="https://lumifarm.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+  <iframe src="https://lumifarm.substack.com/embed" width="100%" height="320" loading="lazy" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 </div>
