@@ -28,7 +28,7 @@ theme = 'blowfish'
   [params.homepage]
     showRecent = false
     layout = "background"
-    homepageImage = "images/food-forest-bg.png"
+    homepageImage = "images/food-forest-bg.webp"
     # 背景遮罩：讓背景變暗，文字更顯眼
     imageFilter = "brightness(0.4) contrast(1.1)"
 
