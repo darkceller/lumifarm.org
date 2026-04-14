@@ -43,13 +43,13 @@ title: 關於我們
 
 ## 聯絡我們 (Contact Us)
 如果您對我們的計畫有興趣，或是希望與我們合作，歡迎透過以下方式聯繫我們：
-* 📧 Email: [info@lumifarm.org]
+* 📧 Email: [info@lumifarm.org](mailto:info@lumifarm.org)
 * 🌿 [追蹤我們的 Substack 電子報](https://lumifarm.substack.com/)
 
 ## 📍 我們的實踐基地
 <div style="border-radius: 12px; overflow: hidden; height: 400px; margin-top: 1rem;">
   <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3616.7408223264097!2d121.20506711061147!3d24.97493117776235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823adef3b298b%3A0xe65ac279ca778bd4!2z5qi454iq6L6y5ZySLeWFiei-suWQiOS9nOekvue-pOWvpumpl-WfuuWcsCAoUGF3LVdhIEZhcm0tTHVtaW5vdXMgRmFybWVyJ3MgTmV0d29yayk!5e0!3m2!1szh-TW!2stw!4v1775368773961!5m2!1szh-TW!2stw" 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2461937965935!2d121.1925345150047!3d24.957723284008272!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823c1ec904dcb%3A0xcdc129d4455ce456!2z5qGD5qC15Y-w54Gj!5e0!3m2!1szh-TW!2stw!4v1689000000000!5m2!1szh-TW!2stw" 
     width="100%" 
     height="100%" 
     style="border:0;" 
